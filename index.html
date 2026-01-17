@@ -126,6 +126,25 @@
             background-color: #1EBE56;
         }
 
+        /* 新增联系按钮样式 - 适配页面风格（已添加display: none隐藏） */
+        #contactButton {
+            background-color: #E63946;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            display: none; /* 关键修改：隐藏联系按钮 */
+        }
+
+        #contactButton:hover {
+            background-color: #c92a37;
+        }
+
         /* 响应式适配 - 手机端 */
         @media (max-width: 768px) {
             .partner-title {
@@ -138,6 +157,10 @@
             .whatsapp-button {
                 padding: 12px 30px;
                 font-size: 1rem;
+            }
+            #contactButton {
+                padding: 10px 25px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -475,6 +498,8 @@
             <i class="fa-brands fa-whatsapp"></i>
             Contactarnos por WhatsApp
         </a>
+        <!-- 新增的联系按钮（已隐藏） -->
+        <button id="contactButton">联系</button>
     </section>
 
     <!-- 页脚 -->
@@ -666,6 +691,17 @@
                 }
             });
         });
+
+        // 新增联系按钮的点击事件（按钮已隐藏，事件保留）
+        document.getElementById('contactButton').addEventListener('click', function() {
+            // 这里可以添加具体的事件逻辑，例如：
+            // 1. 跳转到WhatsApp（和现有按钮一致）
+            // window.location.href = 'https://wa.me/85257614955?text=Contáctame%20para%20obtener%20acciones%20de%20alto%20potencial';
+            // 2. 触发Meta Pixel事件
+            // fbq('track', 'ContactButtonClick');
+            // 3. 显示联系表单/弹窗等
+            alert('联系按钮被点击！你可以在这里添加具体的事件逻辑');
+        }, false);
     </script>
 </body>
 </html>
